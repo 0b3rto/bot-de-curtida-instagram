@@ -41,13 +41,13 @@ def iniciar_driver():
 driver, wait = iniciar_driver()
 # Entrar no site do instagram
 driver.get('https://www.instagram.com/')
-# Clicar e digitar meu usuário
+# Clicar e digitar seu usuário
 campo_usuario = wait.until(condicao_esperada.element_to_be_clickable((By.XPATH, "//input[@name='username']")))
-campo_usuario.send_keys('61994620909')
+campo_usuario.send_keys('usuário ou número de telefone')
 sleep(2)
-# clicar e digitar minha senha
+# clicar e digitar sua senha
 campo_senha = wait.until(condicao_esperada.element_to_be_clickable((By.XPATH, "//input[@aria-label='Senha']")))
-campo_senha.send_keys('Luiss1lv@1204LR')
+campo_senha.send_keys('sua senha')
 sleep(3)
 
 # clicar no campo entrar
@@ -57,8 +57,8 @@ campo_entrar.click()
 sleep(5)
 
 while True:
-    # navegar até a página alvo https://www.instagram.com/luiztaven/ (nesse caso meu próprio insta)
-    driver.get('https://www.instagram.com/luiztaven')
+    # navegar até a página alvo
+    driver.get('https://www.instagram.com/(coloque aqui o usuário alvo)')
     sleep(5)
     # clicar na última postagem 
     postagens = wait.until(condicao_esperada.visibility_of_any_elements_located((By.XPATH, "//div[@class='_aagu']")))
